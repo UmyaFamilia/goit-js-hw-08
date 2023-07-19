@@ -34,4 +34,6 @@ function end(evnt) {
   localStorage.clear();
   inpute.value = '';
   textarea.value = '';
+  info.name = '';
+  info.message = '';
 }
