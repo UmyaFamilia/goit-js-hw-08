@@ -17,8 +17,8 @@ if (JSON.parse(localStorage.getItem('feedback-form-state'))) {
   textarea.value = info.message;
 }
 
-form.addEventListener('input', throttle(IDontKnow, 500));
-function IDontKnow(evnt) {
+form.addEventListener('input', throttle(putInStorege, 500));
+function putInStorege(evnt) {
   if (evnt.target.name == 'email') {
     info.name = evnt.target.value;
   }
@@ -30,7 +30,7 @@ function IDontKnow(evnt) {
 form.addEventListener('submit', end);
 function end(evnt) {
   evnt.preventDefault();
-  console.log('email= ' + inpute.value + '    maessage= ' + textarea.value);
+  console.log(info);
   localStorage.clear();
   inpute.value = '';
   textarea.value = '';
